@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/gameolive-studio/gameolive/compare/v1.0.0...v1.0.1) (2020-10-14)
+
+
+### Bug Fixes
+
+* method- getGameURL for getting game link ([7920c1c](https://github.com/gameolive-studio/gameolive/commit/7920c1cf2836abe06413b63d355dd8f0d322db25))
+
 # 1.0.0 (2020-10-14)
 
 
