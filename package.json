@@ -1,6 +1,6 @@
 {
   "name": "@gameolive/gameolive",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JS to to simplify game launches with GameOlive platform",
   "private": false,
   "files": [

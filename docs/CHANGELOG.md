@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/gameolive-studio/gameolive/compare/v1.0.1...v1.0.2) (2020-10-15)
+
+
+### Bug Fixes
+
+* game launcher functionality added ([3a02021](https://github.com/gameolive-studio/gameolive/commit/3a020214e142513214a591b89e6522a1f6faef59))
+
 ## [1.0.1](https://github.com/gameolive-studio/gameolive/compare/v1.0.0...v1.0.1) (2020-10-14)
 
 
