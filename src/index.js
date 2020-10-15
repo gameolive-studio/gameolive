@@ -1,6 +1,7 @@
-const {buildURL} = require('./components/utils.js');
+const { buildURL } = require("./components/utils.js");
+const { launch } = require("./components/launcher.js");
 
 module.exports = {
-  launch: (num1, num2) => num1 + num2,
-  getGameURL: (config,callback) => buildURL(config,callback),
+  launchGame: (config, callback) => launch(config, callback),
+  getGameURL: (config, callback) => buildURL(config, callback),
 };
