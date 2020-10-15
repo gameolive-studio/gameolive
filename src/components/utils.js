@@ -1,12 +1,33 @@
 const axios = require("axios");
-
 const { ERROR_CODES, DEFAULT } = require("../appContants");
+const universalBtoa = (str) => {
+  try {
+    return btoa(str);
+  } catch (err) {
+    return Buffer.from(str).toString("base64");
+  }
+};
 
-function formulateGameUrl(launchConfig) {
-  return `${DEFAULT.STATIC_HOST}/${launchConfig.configuration.clientId}/${DEFAULT.INDEX_PATH}`;
+// const universalAtob = (b64Encoded) => {
+//   try {
+//     return atob(b64Encoded);
+//   } catch (err) {
+//     return Buffer.from(b64Encoded, "base64").toString();
+//   }
+// };
+function formulateGameUrl(config, launchConfigFromServer) {
+  let urlData = `gameid=${launchConfigFromServer.gameId}&configid=${config.configId}&server=${config.server}&operatorid=${config.operatorId}&playerid=${config.playerId}`;
+  if (config.rawUrl !== true) {
+    urlData = `token=${universalBtoa(urlData)}`;
+  }
+  return `${DEFAULT.STATIC_HOST}/${launchConfigFromServer.configuration.clientId}/${DEFAULT.INDEX_PATH}/index.html?${urlData}`;
 }
 module.exports = {
   buildURL: (config, callback) => {
+    if (!config) {
+      console.error("launch: config is required");
+      return;
+    }
     if (!callback) {
       console.error("buildURL: callback function not provided");
       return;
@@ -16,7 +37,7 @@ module.exports = {
         `${DEFAULT.API_HOST}/api/launch-config/${config.operatorId}/${config.configId}`
       )
       .then(function (response) {
-        var gameUrl = formulateGameUrl(response.data);
+        var gameUrl = formulateGameUrl(config, response.data);
         console.log(gameUrl);
         callback(gameUrl);
       })

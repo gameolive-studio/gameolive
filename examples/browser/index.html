@@ -1,21 +1,27 @@
 <html>
 
 <head>
-    <title>Test Calculator</title>
+    <title>Game Launch Tester</title>
 </head>
 
 <body>
+    <div id="gamecontainer"></div>
     <script src='./gameolive.js'></script>
     <script>
-        const { launch, getGameURL } = gameolive;
-        console.log('1 + 2 = ' + launch(1, 2));
-        getGameURL({operatorId:"5f41517aea7e1b306e4e83ec", configId:"5f86abebeb039e4113549181"},(url,error)=>{
+        const iFrameLaunchConfig = { operatorId: "5f41529dea7e1b306e4e8404", configId: "5f887f579dd500000adf53f5", server:"https://beta-elantra-api.gameolive.com", playerId:"test1234", launchType:"iframe", gameContainerId:"gamecontainer" };
+        const modalLaunchConfig = { operatorId: "5f41529dea7e1b306e4e8404", configId: "5f887f579dd500000adf53f5", server:"https://beta-elantra-api.gameolive.com", playerId:"test1234", launchType:"modal" };
+        const popupLaunchConfig = { operatorId: "5f41529dea7e1b306e4e8404", configId: "5f887f579dd500000adf53f5", server: "https://beta-elantra-api.gameolive.com", playerId: "test1234", launchType:"popup", name:"", specs: "width=960,height=540", replace:""} // refer https://www.w3schools.com/jsref/met_win_open.asp
+        const redirectLaunchConfig = { operatorId: "5f41529dea7e1b306e4e8404", configId: "5f887f579dd500000adf53f5", server: "https://beta-elantra-api.gameolive.com", playerId: "test1234", launchType: "redirect" }
+        const { launchGame, getGameURL } = gameolive;
+        getGameURL(iFrameLaunchConfig,(url,error)=>{
             if(!error){
                 console.log(url);
             }else{
                 console.error(error);
             }
         });
+        launchGame(redirectLaunchConfig)
+        
     </script>
 </body>
 
