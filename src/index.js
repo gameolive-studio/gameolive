@@ -5,8 +5,20 @@ const { getGames } = require("./components/games.js");
 const { getPlayerToken, registerPlayer } = require("./components/players.js");
 const { ERROR_CODES } = require("./appConstants");
 let initConfig;
+/**
+ * GameOlive client library for easy integration with GameOlive platform.
+ * @module gameolive
+ */
+
 module.exports = {
-  /** Initialise the library with the machine user configuration. */
+  /**
+   * Initialize the library with machine user credentials.
+   *    @param {json} config Credentials of machine user.
+   *    @param {String} config.clientId
+   *    @param {String} config.clientSecret
+   *    @param {String} config.operatorId
+   * @param {function} callback
+   */
   init: (config, callback) => {
     getAuthToken(config, (token, error) => {
       if (error) {
