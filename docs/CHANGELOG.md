@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/gameolive-studio/gameolive/compare/v1.0.2...v1.0.3) (2020-10-16)
+
+
+### Bug Fixes
+
+* added API for get player token ([4f000df](https://github.com/gameolive-studio/gameolive/commit/4f000df4f963573cb9c089bf88469b53a6d7c57d))
+* added Authentication flow ([7e2ba95](https://github.com/gameolive-studio/gameolive/commit/7e2ba957c1c032c4a537196813d0f0481c9c7755))
+* added jsDoc for documentation ([f9afc09](https://github.com/gameolive-studio/gameolive/commit/f9afc09e890eaa5b200dc1d7579c1c4f3497ea31))
+
 ## [1.0.2](https://github.com/gameolive-studio/gameolive/compare/v1.0.1...v1.0.2) (2020-10-15)
 
 
