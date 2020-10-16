@@ -1,4 +1,4 @@
-const { ERROR_CODES, DEFAULT } = require("../appContants");
+const { ERROR_CODES, DEFAULT } = require("../appConstants");
 const { buildURL } = require("./utils.js");
 let gameIFrame;
 function createModal(config, contentToShow) {

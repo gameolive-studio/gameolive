@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { ERROR_CODES, DEFAULT } = require("../appContants");
+const { ERROR_CODES, DEFAULT } = require("../appConstants");
 const universalBtoa = (str) => {
   try {
     return btoa(str);
