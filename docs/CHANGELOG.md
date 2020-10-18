@@ -1,3 +1,11 @@
+## [1.0.4](https://github.com/gameolive-studio/gameolive/compare/v1.0.3...v1.0.4) (2020-10-18)
+
+
+### Bug Fixes
+
+* default value of API_HOST ([9545e61](https://github.com/gameolive-studio/gameolive/commit/9545e61e5f7b1cc5a24a73cbc182ece95fe73a2c))
+* enable documentation generation ([d84feef](https://github.com/gameolive-studio/gameolive/commit/d84feef0432d6e65a4d792fe13652906c4f0fdff))
+
 ## [1.0.3](https://github.com/gameolive-studio/gameolive/compare/v1.0.2...v1.0.3) (2020-10-16)
 
 
