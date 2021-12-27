@@ -14,14 +14,14 @@ function createModal(config, contentToShow) {
   modalContent.setAttribute(
     "style",
     "position:absolute; width:" +
-      (config.width || "90%") +
-      "; height:" +
-      (config.height || "90%") +
-      "; top:" +
-      (config.top || "5%") +
-      "; left:" +
-      (config.left || "5%") +
-      ";zIndex:99999"
+    (config.width || "90%") +
+    "; height:" +
+    (config.height || "90%") +
+    "; top:" +
+    (config.top || "5%") +
+    "; left:" +
+    (config.left || "5%") +
+    ";zIndex:99999"
   );
 
   modalContent.appendChild(contentToShow);
@@ -80,18 +80,33 @@ module.exports = {
         switch (config.launchType) {
           case "iframe": {
             gameIframe = createIFrame(gameUrl);
+
+            // wipout exiting content in the container
+            document
+              .getElementById(config.gameContainerId).innerHTML = '';
+
+            // add iframe in the container
             document
               .getElementById(config.gameContainerId)
               .appendChild(gameIframe);
+            if (callback) {
+              callback(gameIframe, undefined);
+            }
             break;
           }
           case "modal": {
             gameIframe = createIFrame(gameUrl);
-            createModal(config, gameIframe);
+            var modal = createModal(config, gameIframe);
+            if (callback) {
+              callback(modal, undefined);
+            }
             break;
           }
           case "popup": {
-            window.open(gameUrl, config.name, config.specs, config.replace);
+            var win = window.open(gameUrl, config.name, config.specs, config.replace);
+            if (callback) {
+              callback(win, undefined);
+            }
             break;
           }
           case "redirect":
