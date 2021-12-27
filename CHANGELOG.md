@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/gameolive-studio/gameolive/compare/v1.0.5...v1.0.6) (2021-12-27)
+
+
+### Bug Fixes
+
+* added support for server parameter from config ([c979246](https://github.com/gameolive-studio/gameolive/commit/c979246fd9c3e748cdc1f21d3539089c1c04c874))
+
 ## [1.0.5](https://github.com/gameolive-studio/gameolive/compare/v1.0.4...v1.0.5) (2021-12-27)
 
 
