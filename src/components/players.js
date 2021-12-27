@@ -17,7 +17,7 @@ module.exports = {
       console.error("getGames: config is required");
       return;
     }
-    const url = `${DEFAULT.API_HOST}/api/player/token`;
+    const url = `${config.server ? config.server : DEFAULT.API_HOST}/api/player/token`;
 
     const options = {
       method: "POST",
