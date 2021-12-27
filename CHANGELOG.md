@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/gameolive-studio/gameolive/compare/v1.0.6...v1.0.7) (2021-12-27)
+
+
+### Bug Fixes
+
+* added callback trigger on successful launch ([d46d6fb](https://github.com/gameolive-studio/gameolive/commit/d46d6fb911fc53a0bb0604f41553e0c8689260d4))
+
 ## [1.0.6](https://github.com/gameolive-studio/gameolive/compare/v1.0.5...v1.0.6) (2021-12-27)
 
 
