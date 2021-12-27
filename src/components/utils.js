@@ -22,7 +22,7 @@ function formulateGameUrl(config, launchConfigFromServer) {
   }
 
   if (launchConfigFromServer.configuration && launchConfigFromServer.configuration.gameLink) {
-    return `${launchConfigFromServer.gameLink}?${urlData}`;
+    return `${launchConfigFromServer.configuration.gameLink}?${urlData}`;
   }
 
   if (launchConfigFromServer.gameLink) {
