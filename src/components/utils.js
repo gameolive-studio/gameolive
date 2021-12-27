@@ -20,6 +20,14 @@ function formulateGameUrl(config, launchConfigFromServer) {
   if (config.rawUrl !== true) {
     urlData = `token=${universalBtoa(urlData)}`;
   }
+
+  if (launchConfigFromServer.configuration && launchConfigFromServer.configuration.gameLink) {
+    return `${launchConfigFromServer.gameLink}?${urlData}`;
+  }
+
+  if (launchConfigFromServer.gameLink) {
+    return `${launchConfigFromServer.gameLink}?${urlData}`;
+  }
   return `${DEFAULT.STATIC_HOST}/${launchConfigFromServer.configuration.clientId}/${DEFAULT.INDEX_PATH}/index.html?${urlData}`;
 }
 module.exports = {
@@ -32,9 +40,16 @@ module.exports = {
       console.error("buildURL: callback function not provided");
       return;
     }
+    var launchConfigUrl;
+    if (config.server) {
+      launchConfigUrl = `${config.server}/api/launch-config/${config.operatorId}/${config.configId}`;
+    } else {
+      // fallback to default
+      `${DEFAULT.API_HOST}/api/launch-config/${config.operatorId}/${config.configId}`;
+    }
     axios
       .get(
-        `${DEFAULT.API_HOST}/api/launch-config/${config.operatorId}/${config.configId}`
+        launchConfigUrl
       )
       .then(function (response) {
         var gameUrl = formulateGameUrl(config, response.data);

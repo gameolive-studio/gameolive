@@ -7,11 +7,9 @@ module.exports = {
       return;
     }
     // /api/tenant/5f5dd02db40da96623df497b/game?filter[application]=website&orderBy=&limit=10&offset=0
-    const url = `${DEFAULT.API_HOST}/api/tenant/${
-      config.operatorId
-    }/game?filter[application]=${config.application || "website"}&orderBy=${
-      config.orderBy || ""
-    }&limit=${config.limit || 50}&offset=${config.offset || 0}`;
+    const url = `${config.server ? config.server : DEFAULT.API_HOST}/api/tenant/${config.operatorId
+      }/game?filter[application]=${config.application || "website"}&orderBy=${config.orderBy || ""
+      }&limit=${config.limit || 50}&offset=${config.offset || 0}`;
 
     const options = {
       method: "GET",
