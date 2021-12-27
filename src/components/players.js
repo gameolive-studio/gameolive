@@ -64,7 +64,7 @@ module.exports = {
       console.error("getGames: config is required");
       return;
     }
-    const url = `${DEFAULT.API_HOST}/api/player/register`;
+    const url = `${config.server ? config.server : DEFAULT.API_HOST}/api/player/register`;
 
     const options = {
       method: "POST",
