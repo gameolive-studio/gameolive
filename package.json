@@ -1,6 +1,6 @@
 {
   "name": "@gameolive/gameolive",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "JS to to simplify game launches with GameOlive platform",
   "private": false,
   "files": [
@@ -10,7 +10,7 @@
   "scripts": {
     "build:browser": "webpack && cp dist/gameolive.js examples/browser",
     "build:node": "webpack && cp dist/gameolive.js examples/node/ && node examples/node/example.js && node examples/node/lobby.js",
-    "build": "webpack && npm run generate:doc",
+    "build": "npm run build:browser && npm run build:node && webpack && npm run generate:doc",
     "semantic-release": "semantic-release",
     "generate:doc": "jsdoc -c conf.json  --debug"
   },
