@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/gameolive-studio/gameolive/compare/v1.1.0...v1.1.1) (2022-07-17)
+
+
+### Bug Fixes
+
+* bug player token and currency ([d9fb825](https://github.com/gameolive-studio/gameolive/commit/d9fb825807e3b843a51dea202010fdb6299e5c53))
+
 # [1.1.0](https://github.com/gameolive-studio/gameolive/compare/v1.0.8...v1.1.0) (2022-07-17)
 
 
