@@ -16,7 +16,7 @@ const universalBtoa = (str) => {
 //   }
 // };
 function formulateGameUrl(config, launchConfigFromServer) {
-  let urlData = `gameid=${launchConfigFromServer.gameId}&configid=${config.configId}&server=${config.server}&operatorid=${config.operatorId}&playerid=${config.playerId}`;
+  let urlData = `gameid=${launchConfigFromServer.gameId}&configid=${config.configId}&server=${config.server}&operatorid=${config.operatorId}&playerid=${config.playerId}&playerid=${config.playertoken}&playerid=${config.currency}`;
   if (config.rawUrl !== true) {
     urlData = `token=${universalBtoa(urlData)}`;
   }
