@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/gameolive-studio/gameolive/compare/v1.0.8...v1.1.0) (2022-07-17)
+
+
+### Features
+
+* added support for player token and currency ([eea6013](https://github.com/gameolive-studio/gameolive/commit/eea6013bf01a0a679dc4c5cb5f0723c742c6b642))
+* added support for player token and currency ([51d81f8](https://github.com/gameolive-studio/gameolive/commit/51d81f871065bf095832ff44ceaeef52740b4453))
+
 ## [1.0.7](https://github.com/gameolive-studio/gameolive/compare/v1.0.6...v1.0.7) (2021-12-27)
 
 
