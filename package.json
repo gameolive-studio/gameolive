@@ -10,7 +10,7 @@
   "scripts": {
     "build:browser": "webpack && cp dist/gameolive.js examples/browser",
     "build:node": "webpack && cp dist/gameolive.js examples/node/ && node examples/node/example.js && node examples/node/lobby.js",
-    "build": "webpack && npm run generate:doc",
+    "build": "npm run build:browser && npm run build:node && webpack && npm run generate:doc",
     "semantic-release": "semantic-release",
     "generate:doc": "jsdoc -c conf.json  --debug"
   },
