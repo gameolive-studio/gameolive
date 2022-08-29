@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/gameolive-studio/gameolive/compare/v1.1.1...v1.2.0) (2022-08-29)
+
+
+### Features
+
+* added support for added launch config ([36912e0](https://github.com/gameolive-studio/gameolive/commit/36912e030dd23ca6be3c44175118fef772fe9956))
+
 ## [1.1.1](https://github.com/gameolive-studio/gameolive/compare/v1.1.0...v1.1.1) (2022-07-17)
 
 
