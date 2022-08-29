@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/gameolive-studio/gameolive/compare/v1.2.0...v1.2.1) (2022-08-29)
+
+
+### Bug Fixes
+
+* launch config param ([4d7a67f](https://github.com/gameolive-studio/gameolive/commit/4d7a67f8e57a3fd871894d52c0e9409e626e9e38))
+* launch config param ([88fda98](https://github.com/gameolive-studio/gameolive/commit/88fda984458d5f5afc26f493db8b9276d3ddad30))
+
 # [1.2.0](https://github.com/gameolive-studio/gameolive/compare/v1.1.1...v1.2.0) (2022-08-29)
 
 
