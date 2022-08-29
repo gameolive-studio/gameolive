@@ -16,7 +16,14 @@ const universalBtoa = (str) => {
 //   }
 // };
 function formulateGameUrl(config, launchConfigFromServer) {
-  let urlData = `gameid=${launchConfigFromServer.gameId}&configid=${config.configId}&server=${config.server}&operatorid=${config.operatorId}&playerid=${config.playerId}&playertoken=${config.playerToken}&currency=${config.currency}`;
+  let additionLaunchQs = "";
+  if (launchConfigFromServer && launchConfigFromServer.launch) {
+    let lp = launchConfigFromServer.launch;
+    additionLaunchQs = Object.keys(lp)
+      .map((key) => key + "=" + lp[key])
+      .join("&");
+  }
+  let urlData = `gameid=${launchConfigFromServer.gameId}&configid=${config.configId}&server=${config.server}&operatorid=${config.operatorId}&playerid=${config.playerId}&playertoken=${config.playerToken}&currency=${config.currency}&${additionLaunchQs}`;
   if (config.rawUrl !== true) {
     urlData = `token=${universalBtoa(urlData)}`;
   }
