@@ -17,8 +17,9 @@ const universalBtoa = (str) => {
 // };
 function formulateGameUrl(config, launchConfigFromServer) {
   let additionLaunchQs = "";
-  if (launchConfigFromServer && launchConfigFromServer.launch) {
-    let lp = launchConfigFromServer.launch;
+  const lConfig = launchConfigFromServer.configuration;
+  if (lConfig && lConfig.launch) {
+    let lp = lConfig.launch;
     additionLaunchQs = Object.keys(lp)
       .map((key) => key + "=" + lp[key])
       .join("&");
@@ -28,14 +29,14 @@ function formulateGameUrl(config, launchConfigFromServer) {
     urlData = `token=${universalBtoa(urlData)}`;
   }
 
-  if (launchConfigFromServer.configuration && launchConfigFromServer.configuration.gameLink) {
-    return `${launchConfigFromServer.configuration.gameLink}?${urlData}`;
+  if (lConfig && lConfig.gameLink) {
+    return `${lConfig.gameLink}?${urlData}`;
   }
 
   if (launchConfigFromServer.gameLink) {
     return `${launchConfigFromServer.gameLink}?${urlData}`;
   }
-  return `${DEFAULT.STATIC_HOST}/${launchConfigFromServer.configuration.clientId}/${DEFAULT.INDEX_PATH}/index.html?${urlData}`;
+  return `${DEFAULT.STATIC_HOST}/${lConfig.clientId}/${DEFAULT.INDEX_PATH}/index.html?${urlData}`;
 }
 module.exports = {
   buildURL: (config, callback) => {
@@ -55,9 +56,7 @@ module.exports = {
       `${DEFAULT.API_HOST}/api/launch-config/${config.operatorId}/${config.configId}`;
     }
     axios
-      .get(
-        launchConfigUrl
-      )
+      .get(launchConfigUrl)
       .then(function (response) {
         var gameUrl = formulateGameUrl(config, response.data);
         console.log(gameUrl);
