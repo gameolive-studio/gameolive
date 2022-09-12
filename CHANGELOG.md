@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/gameolive-studio/gameolive/compare/v1.2.1...v1.3.0) (2022-09-12)
+
+
+### Features
+
+* fixing iframe origin issue ([9b16353](https://github.com/gameolive-studio/gameolive/commit/9b1635308e781ae09258bd52270d1cbf3de4cd8e))
+
 ## [1.2.1](https://github.com/gameolive-studio/gameolive/compare/v1.2.0...v1.2.1) (2022-08-29)
 
 
