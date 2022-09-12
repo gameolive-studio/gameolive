@@ -14,14 +14,14 @@ function createModal(config, contentToShow) {
   modalContent.setAttribute(
     "style",
     "position:absolute; width:" +
-    (config.width || "90%") +
-    "; height:" +
-    (config.height || "90%") +
-    "; top:" +
-    (config.top || "5%") +
-    "; left:" +
-    (config.left || "5%") +
-    ";zIndex:99999"
+      (config.width || "90%") +
+      "; height:" +
+      (config.height || "90%") +
+      "; top:" +
+      (config.top || "5%") +
+      "; left:" +
+      (config.left || "5%") +
+      ";zIndex:99999"
   );
 
   modalContent.appendChild(contentToShow);
@@ -49,6 +49,11 @@ function createIFrame(url) {
   var iframe = document.createElement("iframe");
   iframe.src = url;
   iframe.name = "frame";
+  iframe.referrerpolicy = "origin";
+  iframe.sandbox =
+    "allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-top-navigation-by-user-activation allow-same-origin allow-forms allow-pointer-lock";
+  iframe.allow = "autoplay;";
+  iframe.autoplay = "autoplay";
   iframe.setAttribute("style", "width:100%; height:100%;");
   if (window.addEventListener) {
     window.addEventListener("message", _onMessageReceieved.bind(this), false);
@@ -82,8 +87,7 @@ module.exports = {
             gameIframe = createIFrame(gameUrl);
 
             // wipout exiting content in the container
-            document
-              .getElementById(config.gameContainerId).innerHTML = '';
+            document.getElementById(config.gameContainerId).innerHTML = "";
 
             // add iframe in the container
             document
@@ -103,7 +107,12 @@ module.exports = {
             break;
           }
           case "popup": {
-            var win = window.open(gameUrl, config.name, config.specs, config.replace);
+            var win = window.open(
+              gameUrl,
+              config.name,
+              config.specs,
+              config.replace
+            );
             if (callback) {
               callback(win, undefined);
             }
